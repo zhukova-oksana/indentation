@@ -49,17 +49,17 @@
         <div class="image-text">
           <img class="image-text__image" src="images/image-1.jpg" alt="пример отступов от предыдущего элемента">
           <div class="image-text__info">
-            <p class="page__text"><span class="page__bold">ВАЖНО:</span> <strong class="page__normal"><i>margin</i> всегда задают от предыдущего элемента к следующему.</strong></p>
-            <p class="page__text">Свойство <i>margin</i> необходимо только для того, чтобы отодвинуть своего соседа справа или снизу, поэтому используется <i>margin-right</i> и <i>margin-bottom</i>.</p>
-            <p class="page__text">(!) Свойства <i>margin-left</i> и <i>margin-top</i> используются крайне редко.</p>
-            <p class="page__text">Для <i>padding</i> верно обратное. Исключением является его применения в декоративных целях, например, для увеличения области ссылки.</p>
+            <p class="page__text"><span class="page__bold">ВАЖНО:</span> <strong class="page__normal"><span class="page__italic">margin</span> всегда задают от предыдущего элемента к следующему.</strong></p>
+            <p class="page__text">Свойство <span class="page__italic">margin</span> необходимо только для того, чтобы отодвинуть своего соседа справа или снизу, поэтому используется <span class="page__italic">margin-right</span> и <span class="page__italic">margin-bottom</span>.</p>
+            <p class="page__text">(!) Свойства <span class="page__italic">margin-left</span> и <span class="page__italic">margin-top</span> используются крайне редко.</p>
+            <p class="page__text">Для <span class="page__italic">padding</span> верно обратное. Исключением является его применения в декоративных целях, например, для увеличения области ссылки.</p>
           </div>
         </div>
 
         <div class="image-text">
           <img class="image-text__image image-text__image_position_right" src="images/image-2.jpg" alt="пример отступов от предыдущего элемента">
           <div class="image-text__info">
-            <p class="page__text">Отступ внутри блока сверху или слева реализуется&nbsp;через <i>padding-top</i> и <i>padding-left</i> родителя.</p>
+            <p class="page__text">Отступ внутри блока сверху или слева реализуется&nbsp;через <span class="page__italic">padding-top</span> и <span class="page__italic">padding-left</span> родителя.</p>
             <p class="page__text">Отступы, как правило, делают в направлении от предыдущего элемента к следующему. Так элемент не будет толкать сам себя.</p>
             <p class="page__text">Изначально элемент статичен, а его положение может меняться только под воздействием свойств&nbsp;других блоков или свойств родителя.</p>
           </div>
@@ -81,14 +81,14 @@
           <img class="images__image" src="images/image-5.jpg" alt="визуальное отображение отступов соседних элементов на картинке">
         </figure>
 
-        <p class="page__text">Казалось бы, можно задать отступ параграфу <i>&lt;p&gt;</i>, либо обёртке <i>&lt;article&gt;</i> для достижения той же цели. Внешне останется все точно также, но так делать не рекомендуется.</p>
+        <p class="page__text">Казалось бы, можно задать отступ параграфу <span class="page__italic">&lt;p&gt;</span>, либо обёртке <span class="page__italic">&lt;article&gt;</span> для достижения той же цели. Внешне останется все точно также, но так делать не рекомендуется.</p>
         <p class="page__text">Предыдущий пример был достаточно простым, но бывает вложенность значительно больше.</p>
 
         <div class="images">
           <img class="images__image" src="images/image-6.jpg" alt="пример большей вложенности">
         </div>
 
-        <p class="page__text">В случае с заголовком, если ему необходим отступ сверху, последним элементом будет <i>section</i>. Именно для него задается <i>padding-top</i>, а не <i>div</i> с классом <i>container</i>. Свойства <i>margin</i>, которые стоят по умолчанию необходимо обнулить.</p>
+        <p class="page__text">В случае с заголовком, если ему необходим отступ сверху, последним элементом будет <span class="page__italic">section</span>. Именно для него задается <span class="page__italic">padding-top</span>, а не <span class="page__italic">div</span> с классом <span class="page__italic">container</span>. Свойства <span class="page__italic">margin</span>, которые стоят по умолчанию необходимо обнулить.</p>
 
         <div class="images">
           <img class="images__image" src="images/image-7.jpg" alt="пример отступа сверху у секции">
@@ -106,7 +106,7 @@
           <img class="images__image" src="images/image-8.jpg" alt="пример отступов между рецептами и следующим блоком">
         </figure>
 
-        <p class="page__text">В соответствии со вторым принципом: последний <i>margin</i> обнуляется, а нижний отступ задаётся через padding для <i>section</i>. Я чаще всего задаю <i>padding</i> для секции с обоих сторон, если расстояние между секциями 100px задаю секциям <i>padding-top:50px</i> и <i>padding-bottom:50px</i>.</p>
+        <p class="page__text">В соответствии со вторым принципом: последний <span class="page__italic">margin</span> обнуляется, а нижний отступ задаётся через padding для <span class="page__italic">section</span>. Я чаще всего задаю <span class="page__italic">padding</span> для секции с обоих сторон, если расстояние между секциями 100px задаю секциям <span class="page__italic">padding-top:50px</span> и <span class="page__italic">padding-bottom:50px</span>.</p>
 
         <div class="images">
           <img class="images__image" src="images/image-9.jpg" alt="пример отступов между рецептами и следующим блоком в браузере">

@@ -115,6 +115,10 @@ article {
   font-weight: 400;
 }
 
+.page__italic {
+  font-style: italic;
+}
+
 .articles {
   padding-top: 60px;
   padding-bottom: 50px;
