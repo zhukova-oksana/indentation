@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Отступы в вёрстке</title>
+
+  <link rel="preload" href="fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Italic.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Bold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Bold.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Black.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/Roboto-Black.woff" as="font" type="font/woff" crossorigin>
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="page">
+  <article class="articles">
+    <div class="container">
+      <h1 class="articles__title">Отступы в вёрстке: margin и padding</h1>
+
+      <div class="articles__text">
+        <p class="page__text">В этой статье я рассмотрю самые популярные "стандартные" решения для сохранения смысла и хорошей читаемости вашего кода. Если точнее — речь пойдет об основных правилах организации отступов. Они сильно влияют на общую функциональность кода и, если всё сделано верно, позволяют легко вносить изменения в любую его часть. При этом другие части кода продолжат нормально работать.</p>
+        <p class="page__text">Как это часто бывает, знание базовых принципов поможет проявить гибкость и выйти за их пределы. Эти знания особенно важны для начинающих, но также будут полезным напоминанием и для более опытных верстальщиков. Итак, поговорим о фундаментальных основах работы с отступами в вёрстке.</p>
+      </div>
+
+      <div class="contents">
+        <h3 class="contents__title">Содержание:</h3>
+        <nav class="navigation">
+          <ol class="navigation__list">
+            <li class="navigation__item">
+              <a class="navigation__link" href="#article-1">Отступ задается от предыдущего элемента к следующему</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#article-2">Отступ задается последнему возможному элементу в DOM-дереве</a>
+            </li>
+            <li class="navigation__item">
+              <a class="navigation__link" href="#article-3">Для последнего элемента группы отступ обнуляется</a>
+            </li>
+          </ol>
+        </nav>
+      </div>
+
+      <article class="article" id="article-1">
+        <h2 class="article__title">Отступ задается от предыдущего элемента к следующему: от&nbsp;первого ко второму, сверху вниз, слева направо.</h2>
+
+        <div class="image-text">
+          <img class="image-text__image" src="images/image-1.jpg" alt="пример отступов от предыдущего элемента">
+          <div class="image-text__info">
+            <p class="page__text"><span class="page__bold">ВАЖНО:</span> <strong class="page__normal"><i>margin</i> всегда задают от предыдущего элемента к следующему.</strong></p>
+            <p class="page__text">Свойство <i>margin</i> необходимо только для того, чтобы отодвинуть своего соседа справа или снизу, поэтому используется <i>margin-right</i> и <i>margin-bottom</i>.</p>
+            <p class="page__text">(!) Свойства <i>margin-left</i> и <i>margin-top</i> используются крайне редко.</p>
+            <p class="page__text">Для <i>padding</i> верно обратное. Исключением является его применения в декоративных целях, например, для увеличения области ссылки.</p>
+          </div>
+        </div>
+
+        <div class="image-text">
+          <img class="image-text__image image-text__image_position_right" src="images/image-2.jpg" alt="пример отступов от предыдущего элемента">
+          <div class="image-text__info">
+            <p class="page__text">Отступ внутри блока сверху или слева реализуется&nbsp;через <i>padding-top</i> и <i>padding-left</i> родителя.</p>
+            <p class="page__text">Отступы, как правило, делают в направлении от предыдущего элемента к следующему. Так элемент не будет толкать сам себя.</p>
+            <p class="page__text">Изначально элемент статичен, а его положение может меняться только под воздействием свойств&nbsp;других блоков или свойств родителя.</p>
+          </div>
+        </div>
+
+      </article>
+
+      <article class="article" id="article-2">
+        <h2 class="article__title">Отступ задается последнему возможному элементу в DOM-дереве</h2>
+
+        <figure class="images">
+          <figcaption class="images__caption">Вообще, margin задают исключительно между соседними элементами DOM-дерева. Для примера, посмотрите на этот список:</figcaption>
+          <img class="images__image" src="images/image-3.jpg" alt="пример кода списка">
+          <img class="images__image" src="images/image-4.jpg" alt="внешний вид списка в браузере">
+        </figure>
+
+        <figure class="images">
+          <figcaption class="images__caption">Отступ делают за счёт соседних элементов, а не дочерних:</figcaption>
+          <img class="images__image" src="images/image-5.jpg" alt="визуальное отображение отступов соседних элементов на картинке">
+        </figure>
+
+        <p class="page__text">Казалось бы, можно задать отступ параграфу <i>&lt;p&gt;</i>, либо обёртке <i>&lt;article&gt;</i> для достижения той же цели. Внешне останется все точно также, но так делать не рекомендуется.</p>
+        <p class="page__text">Предыдущий пример был достаточно простым, но бывает вложенность значительно больше.</p>
+
+        <div class="images">
+          <img class="images__image" src="images/image-6.jpg" alt="пример большей вложенности">
+        </div>
+
+        <p class="page__text">В случае с заголовком, если ему необходим отступ сверху, последним элементом будет <i>section</i>. Именно для него задается <i>padding-top</i>, а не <i>div</i> с классом <i>container</i>. Свойства <i>margin</i>, которые стоят по умолчанию необходимо обнулить.</p>
+
+        <div class="images">
+          <img class="images__image" src="images/image-7.jpg" alt="пример отступа сверху у секции">
+        </div>
+
+        <p class="page__text">Это необходимо для более простого поиска отступов в будущем — для вас или того, кто будет верстать после вас. Кроме того, возможны серьёзные проблемы при динамическом дублировании или выводе вёрстки с нестандартной структурой отступов.</p>
+      </article>
+
+      <article class="article" id="article-3">
+        <h2 class="article__title">Для последнего элемента группы отступ всегда обнуляется</h2>
+        <p class="page__text">Для наглядности возьмём наш предыдущий пример с рецептами</p>
+
+        <figure class="images">
+          <figcaption class="images__caption">Между рецептами расстояние одинаковое. Можно заметить, что и до следующего блока расстояние такое же.</figcaption>
+          <img class="images__image" src="images/image-8.jpg" alt="пример отступов между рецептами и следующим блоком">
+        </figure>
+
+        <p class="page__text">В соответствии со вторым принципом: последний <i>margin</i> обнуляется, а нижний отступ задаётся через padding для <i>section</i>. Я чаще всего задаю <i>padding</i> для секции с обоих сторон, если расстояние между секциями 100px задаю секциям <i>padding-top:50px</i> и <i>padding-bottom:50px</i>.</p>
+
+        <div class="images">
+          <img class="images__image" src="images/image-9.jpg" alt="пример отступов между рецептами и следующим блоком в браузере">
+          <img class="images__image" src="images/image-10.jpg" alt="пример кода 2-х секций">
+        </div>
+
+        <figure class="images">
+          <figcaption class="images__caption">Для большего понимания рассмотрим другой пример, который часто встречается на практике:</figcaption>
+          <img class="images__image" src="images/image-12.jpg" alt="пример меню в браузере">
+          <img class="images__image" src="images/image-13.jpg" alt="пример кода меню">
+        </figure>
+
+        <figure class="images">
+          <figcaption class="images__caption">Здесь нас интересует отступ между пунктами меню и списком с кнопкой поиска. Отступы между пунктами меню задаются так:</figcaption>
+          <img class="images__image" src="images/image-14.jpg" alt="пример стилей для отступа справа">
+        </figure>
+
+        <figure class="images">
+          <figcaption class="images__caption">Советую использовать псевдоклассы :last-child чаще других, например так:</figcaption>
+          <img class="images__image" src="images/image-15.jpg" alt="пример стилей для обнуления отступа справа у последнего элемента">
+        </figure>
+
+      </article>
+
+      <div class="contents">
+        <h3 class="contents__title">Подытожим:</h3>
+        <ul class="contents__list">
+          <li class="contents__item">— отступы задаём от предыдущего элемента к следующему</li>
+          <li class="contents__item">— используем только margin-right и margin-bottom</li>
+          <li class="contents__item">— внешние отступы задаются только между соседями</li>
+          <li class="contents__item">— внутренний отступ задаём самому верхнему элементу в дом дереве</li>
+          <li class="contents__item">— последнему элементу группы отступ всегда обнуляем</li>
+        </ul>
+        <p class="page__text">Конечно бывают исключения. Ведь макеты бывают различной сложности. Иногда базовые принципы приходится&nbsp;нарушать в угоду дизайнерского решения или простоты вёрстки. Но для этого эти принципы необходимо хорошо знать.</p>
+      </div>
+
+    </div>
+  </article>
+</body>
+</html>
