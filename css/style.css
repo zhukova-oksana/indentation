@@ -161,6 +161,10 @@ article {
   margin-bottom: 10px;
 }
 
+.contents__item:last-child {
+  margin-bottom: 0;
+}
+
 .navigation {
   padding-left: 25px;
 }
@@ -174,6 +178,10 @@ article {
 
 .navigation__item {
   margin-bottom: 10px;
+}
+
+.navigation__item:last-child {
+  margin-bottom: 0;
 }
 
 .navigation__link {
